@@ -82,14 +82,45 @@ router.get("/admin", authMiddleware.isAdmin, function(req, res, next) {
   });
 });
 
-// route to get the score from the db
-router.get('/scores', function(req, res) {
-  db.User.find().then(data => {
-    console.log(data);
+
+// api/users/update
+router.put('/update', function(req, res) {
+  console.log("put route in userRoutes.js hit", req.body)
+  // db.Book
+  //     .findOneAndUpdate({ _id: req.params.id }, req.body)
+  //     .then(dbModel => res.json(dbModel))
+  //     .catch(err => res.status(422).json(err));
+  db.User.findOneAndUpdate(
+    {"username": 'jack'},
+    // {$set: {"score": req.body.points}},
+    {$set: {"unlocked": 1}},
+  ).then(data => {
+    console.log(".THEN DATA: ", data);
     res.json(data);
   }).catch(err => {
     console.log(err);
   })
 })
+
+// route to get the score from the db
+router.get('/scores', function(req, res) {
+  db.User.find().then(data => {
+    console.log("data: ", data);
+    res.json(data);
+  }).catch(err => {
+    console.log("error: ", err);
+  })
+})
+
+router.get('/unlocked', function(req, res) {
+  db.User.find().then(data => {
+    console.log("data: ", data);
+    res.json(data);
+  }).catch(err => {
+    console.log("error: ", err);
+  })
+})
+
+
 
 module.exports = router;

@@ -28,7 +28,12 @@ const usersSchema = new Schema({
 
 score: {
     type: Number,
-    default: 0
+    default: 88
+},
+
+unlocked: {
+  type: Number,
+  default: 0
 },
 
   createdAt: {

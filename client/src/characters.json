@@ -2,14 +2,11 @@
 
     {
         "name": "Giraffe",
-        "alive": true,
-        "active": true,
         "staticImg": "images/characters/static/static_giraffe.png",
         "animatedImg": "images/characters/animated/animated_giraffe.png",
         "cagedImg": "images/characters/caged/caged_giraffe.png",
         "scene": [
             {
-                "used": false,
                 "backgroundImg": "images/BG_images/zooBG.png",
                 "question": "It’s a normal day at the Zoo… that is, until closing time. Head Zoo-Keeper William Montague forgets to lock your cage for the night! With mixed feelings, you’re faced with a tough decision: live a meaningless existence in the zoo, or risk it all and escape? Click to make decisions, right/up arrow to explore!" ,
                 "answerTrue": "You kick open your cage with enthusiasm and gallop past all the other animals. As the breeze hits you in the face, you get your first taste of freedom!",
@@ -20,7 +17,7 @@
                 "choiceTwoImg": "images/snatch_images/stay_snatch.png",
                 "incorrectResult": 0,
                 "correctAnswer": "choiceOne",
-                "correct": true
+                "correct": 0
             },
     
             {   
@@ -35,7 +32,7 @@
                 "choiceTwoImg": "images/snatch_images/forest_snatch.png",
                 "incorrectResult": 0,
                 "correctAnswer": "choiceTwo",
-                "correct": true
+                "correct": 1
     
             },
     
@@ -51,7 +48,7 @@
                 "choiceTwoImg": "images/snatch_images/YBR_snatch.png",
                 "incorrectResult": 0,
                 "correctAnswer": "choiceOne",
-                "correct": true
+                "correct": 0
     
             },
     
@@ -67,7 +64,7 @@
                 "choiceTwoImg": "images/snatch_images/water_snatch.png",
                 "incorrectResult": 0,
                 "correctAnswer": "choiceOne",
-                "correct": true
+                "correct": 0
     
             }
         ]
@@ -96,7 +93,7 @@
                 "choiceTwoImg": "images/snatch_images/zookeeper_snatch.png",
                 "incorrectResult": 0,
                 "correctAnswer": "choiceOne",
-                "correct": true
+                "correct": 0
             },
     
             {   
@@ -111,7 +108,7 @@
                 "choiceTwoImg": "images/snatch_images/cottage_snatch.png",
                 "incorrectResult": 0,
                 "correctAnswer": "choiceOne",
-                "correct": true
+                "correct": 0
     
             },
     
@@ -127,7 +124,7 @@
                 "choiceTwoImg": "images/snatch_images/mountain_snatch.png",
                 "incorrectResult": 0,
                 "correctAnswer": "choiceOne",
-                "correct": true
+                "correct": 0
     
             },
     
@@ -143,7 +140,7 @@
                 "choiceTwoImg": "images/snatch_images/roar_snatch.png",
                 "incorrectResult": 0,
                 "correctAnswer": "choiceOne",
-                "correct": true
+                "correct": 0
     
             }
         ]

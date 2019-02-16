@@ -26,9 +26,16 @@ export default {
     return axios.get("/api/users/logout")
   },
 
+  updateUserData: function(data) {
+    console.log("points from API.js: ", data);
+    return axios.put("/api/users/update", data)
+  },
+
   getScores: function() {
     return axios.get("/api/users/scores")
+  },
+
+  getUserData: function() {
+    return axios.get("/api/users/scores")
   }
-
-
 };

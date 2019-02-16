@@ -56,7 +56,8 @@ class Leaderboard extends React.Component {
                 </Row>
                 <footer className="fixed-bottom text-center">
                     <div className="container">
-                        <a href="/">Home</a>
+                        <a href="/game">Home Page</a>
+                        <a href="/contact">Contact</a>
                     </div>
                 </footer>
             </Container>

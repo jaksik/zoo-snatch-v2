@@ -11,9 +11,9 @@ import Poop from './Poop';
 
 
 class Canvas extends Component {
-    constructor(data) {
-        console.log("data: ", data);
+    constructor(props) {
         super();
+        this.props = props;
         this.state = {
             screen: {
                 width: window.innerWidth,
@@ -30,13 +30,14 @@ class Canvas extends Component {
             health: 0,
             monkeyHealth: 0,
             touching: false,
-            //==== SCENE WILL EQUAL DATA.SCENE=====
+            //==== SCENE WILL EQUAL props.SCENE=====
             scene: 0,
             falling: false,
-            data: data,
-            points: data.points,
+            props: props,
+            points: props.points,
             sceneComplete: false
         }
+        this.handleCanvasUpdate = props.handleCanvasUpdate
         this.background = [];
         this.characters = [];
         this.objects = [];
@@ -63,7 +64,6 @@ class Canvas extends Component {
     }
     //handles screen touch events
     handleTouch(value, e) {
-        console.log("value: ", value, "e: ", e.touches.length);
         let keys = this.state.keys;
         if (e.touches.length > 1) {
             keys.up = value;
@@ -92,11 +92,10 @@ class Canvas extends Component {
     //============================================
     //starts game and activates key press/screen touch listener on component mounting
     componentDidMount() {
-        console.log("mounted")
         // console.log("props: ", this.props)
         window.addEventListener('keydown', this.handleKeys.bind(this, true));
         window.addEventListener('keyup', this.handleKeys.bind(this, false));
-      
+
 
         window.addEventListener('touchstart', this.handleTouch.bind(this, true));
         window.addEventListener('touchend', this.handleTouch.bind(this, false));
@@ -131,12 +130,11 @@ class Canvas extends Component {
             requestAnimationFrame(() => { this.update() });
             this.checkSceneComplete(this.characters[0]);
         }
-       
+
     }
 
     //initial game start
     startGame() {
-        console.log("startgame called")
         let background = new Background(this.state);
         this.background.push(background);
         //========================================
@@ -172,8 +170,8 @@ class Canvas extends Component {
     }
 
     generatePoop() {
-            let object = new Poop(this.state, this.characters[0]);
-            this.objects.push(object);
+        let object = new Poop(this.state, this.characters[0]);
+        this.objects.push(object);
     }
 
     //updates objects based on movement
@@ -204,7 +202,7 @@ class Canvas extends Component {
                 if (characters.x > (object.x + object.width) && characters.x < (this.objects[(i + 1)].x) && !characters.jumping && !characters.hitBottom) {
                     console.log("falling");
                     this.setState({ falling: true });
-                    this.setState({ health: 1});
+                    this.setState({ health: 1 });
                 }
             } else if (this.state.scene === 2) {
                 console.log("check touching scene two")
@@ -213,14 +211,14 @@ class Canvas extends Component {
                     console.log("Monkey health", this.state.monkeyHealth)
                 } else if (object.x > this.state.screen.width) {
                     this.objects.shift();
-                } 
+                }
             }
-            
+
         }
         if (this.state.scene === 2) {
             if (monkey.x < (characters.x + characters.width) && this.state.monkeyHealth < 1) {
                 this.setState({
-                    health: this.state.health + .01 ,
+                    health: this.state.health + .01,
                     touching: true
                 });
             } else {
@@ -230,12 +228,12 @@ class Canvas extends Component {
     }
 
     checkSceneComplete(characters) {
-        if (characters.x > this.state.screen.width && !this.state.sceneComplete && this.state.scene === 2) {
-            window.location.href = "/leaderboard";
+        if (characters.x > this.state.screen.width && !this.state.sceneComplete) {
+            this.props.handleCanvasUpdate(0);
         }
         if (characters.x > this.state.screen.width && !this.state.sceneComplete) {
             this.state.sceneComplete = true;
-            this.state.scene ++;
+            this.state.scene++;
             this.background = [];
             this.characters = [];
             this.objects = [];
@@ -250,10 +248,12 @@ class Canvas extends Component {
         return (
             <div>
                 <div className="container">
-                <canvas ref="canvas"
-                    width={this.state.screen.width}
-                    height={this.state.screen.height}
-                />
+                    <span onClick={() => this.props.handleCanvasUpdate(1)}>
+                        <canvas ref="canvas"
+                            width={this.state.screen.width}
+                            height={this.state.screen.height}
+                        />
+                    </span>
                 </div>
             </div>
         )
