@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Auth from "./pages/Auth";
+import Gamepage from './pages/Gamepage';
 import Leaderboard from './pages/Leaderboard/index';
 import Contact from './pages/Contact/index';
-
-import Gamepage from './pages/Gamepage';
 
 class App extends Component {
 

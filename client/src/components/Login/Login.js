@@ -9,7 +9,7 @@ function Login(props) {
         <h1>ZooSnatch</h1>
         <div className="loginBox">
 
-            <h2>Login</h2>
+            <h3>Login</h3>
             
             {props.message ? (
                 <Alert className="animated fadeIn" color="danger">{props.message}</Alert>

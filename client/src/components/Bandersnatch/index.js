@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Col, Row, Container, Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
+import Story from '../../characters.json'
 import Imagecard from './Imagecard';
 
 //Image Imports
@@ -113,12 +115,16 @@ class CharacterSelect extends Component {
     render() {
         return (
             <div>
+                <Row>
+                <Col md="12">
                 <span onClick={() => this.props.handleClick(0)}>
-                    <Imagecard imgsrc={this.state.choiceOneImg} />
+                    <Imagecard imgsrc={this.state.choiceOneImg} text={Story[this.activeCharacter].scene[this.currentScene].choiceOne}/>
                 </span>
                 <span onClick={() => this.props.handleClick(1)}>
-                    <Imagecard imgsrc={this.state.choiceTwoImg} />
+                    <Imagecard imgsrc={this.state.choiceTwoImg} text={Story[this.activeCharacter].scene[this.currentScene].choiceTwo}/>
                 </span>
+                </Col>
+                </Row>
             </div>
         )
     }

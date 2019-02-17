@@ -21,9 +21,9 @@ class Leaderboard extends React.Component {
     getUserScore = () => {
         API.getScores()
             .then(scoreData => {
-                console.log(scoreData.data[scoreData.data.length -1]);
-                let lastScore = scoreData.data[scoreData.data.length -1]
-                this.setState({ 
+                console.log(scoreData.data[scoreData.data.length - 1]);
+                let lastScore = scoreData.data[scoreData.data.length - 1]
+                this.setState({
                     scoreData: scoreData.data,
                     lastScore: lastScore
                 })
@@ -41,13 +41,17 @@ class Leaderboard extends React.Component {
                     <Col size="md-12">
                         <h1 className="text-center">ZooSnatch</h1>
                     </Col>
-                    <Col size="md-6">
+                </Row>
+                <Row>
+                    <Col size="md-12">
                         <h2 id="scoreBanner" className="leaderboard">Your Score:</h2>
-                        <h2><span id="individualScore">
-                       <p> {this.state.lastScore.score}</p>
-                        </span></h2>
+                        <h3><span id="individualScore">
+                            <p> {this.state.lastScore.score}</p>
+                        </span></h3>
                     </Col>
-                    <Col size="md-6">
+                </Row>
+                <Row>
+                    <Col size="md-12">
                         <h2 className="leaderboard">Leaderboard</h2>
                         {this.state.scoreData.map(score => (
                             <h3 key={score._id}>{score.username}: {score.score}</h3>
@@ -56,8 +60,8 @@ class Leaderboard extends React.Component {
                 </Row>
                 <footer className="fixed-bottom text-center">
                     <div className="container">
-                        <a href="/game">Home Page</a>
-                        <a href="/contact">Contact</a>
+                        <a href="/game"> <button>Play Game</button></a>
+                        <a href="/contact"><button>Contact</button></a>
                     </div>
                 </footer>
             </Container>

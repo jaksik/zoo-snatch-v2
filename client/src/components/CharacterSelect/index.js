@@ -25,14 +25,17 @@ class CharacterSelect extends Component {
             this.setState({bearImg: BearStatic})
         }
         if (this.unlockedCharacters === 2) {
-            this.setState({bearImg: BearStatic})
-            this.setState({monkeyImg: MonkeyStatic})
+            this.setState({
+                bearImg: BearStatic,
+                monkeyImg: MonkeyStatic
+            })
         }
     }
 
     render() {
         return (
             <div>
+                <h2>Select A Character to Play Game</h2>
                 <span onClick={() => this.props.handleCharacterSelect (0)}>
                     <Imagecard imgsrc={this.state.giraffeImg} />
                 </span>

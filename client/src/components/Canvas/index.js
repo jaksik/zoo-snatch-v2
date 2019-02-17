@@ -31,7 +31,7 @@ class Canvas extends Component {
             monkeyHealth: 0,
             touching: false,
             //==== SCENE WILL EQUAL props.SCENE=====
-            scene: 0,
+            scene: props.currentScene,
             falling: false,
             props: props,
             points: props.points,
@@ -247,14 +247,12 @@ class Canvas extends Component {
     render() {
         return (
             <div>
-                <div className="container">
                     <span onClick={() => this.props.handleCanvasUpdate(1)}>
                         <canvas ref="canvas"
                             width={this.state.screen.width}
                             height={this.state.screen.height}
                         />
                     </span>
-                </div>
             </div>
         )
     }

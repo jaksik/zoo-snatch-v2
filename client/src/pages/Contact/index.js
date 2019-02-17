@@ -1,7 +1,6 @@
 import React from "react";
 import { Col, Row, Container, Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
 
-import "./Contact.css";
 
 function Contact() {
     return (
@@ -19,6 +18,7 @@ function Contact() {
                     </Col>
                 </Row>
                 <Row>
+                <Col md="6">
                     <form method="post" id="email_form">
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -34,22 +34,34 @@ function Contact() {
                         </div>
                         <button type="submit" class="btn btn-danger" id="submit_form" value="Submit">Submit</button>
                     </form>
+                    </Col>
+                
+                    <Col md="6">
                     <label for="creators">CREATORS</label>
                     <a href="https://github.com/asippel129" target="_blank">
-                        <p class="creator form-control text-center btn btn-danger">Anna Sippel – back end – www.annasippel.com</p>
+                        <p class="creator form-control text-center btn btn-danger">Anna Sippel – Leader Board – www.annasippel.com</p>
                     </a>
                     <a href="https://github.com/Ccolon105" target="_blank">
-                        <p class="creator form-control text-center btn btn-danger">Caleb Colon – back end – www.calebcolon.com</p>
+                        <p class="creator form-control text-center btn btn-danger">Caleb Colon – User Auth – www.calebcolon.com</p>
                     </a>
                     <a href="https://github.com/jaksik" target="_blank">
-                        <p class="creator form-control text-center btn btn-danger">Connor Jaksik – front end – www.connorjaksik.com</p>
+                        <p class="creator form-control text-center btn btn-danger">Connor Jaksik – Java Script – www.connorjaksik.com</p>
                     </a>
                     <a href="https://github.com/mggude" target="_blank">
-                        <p class="creator form-control text-center btn btn-danger">Grace Gude – front end – www.gracegude.com</p>
+                        <p class="creator form-control text-center btn btn-danger">Grace Gude – Style – www.gracegude.com</p>
                     </a>
                     <a href="https://github.com/kDurg" target="_blank">
-                        <p class="creator form-control text-center btn btn-danger">Kyle Durigan – front end – www.kyledurigan.com</p>
+                        <p class="creator form-control text-center btn btn-danger">Kyle Durigan – Story Creator – www.kyledurigan.com</p>
                     </a>
+                    </Col>
+                </Row>
+                <Row>
+                <Col md="12">
+                <a href="/game"> <button>Play Game</button></a>
+
+                   
+                    <button>Log Out</button>
+                    </Col>
                 </Row>
             </Container>
 

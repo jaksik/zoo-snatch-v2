@@ -31,3 +31,8 @@ footer {
  .characterImg {
      padding: 200px;
  }
+
+ .loginBox {
+     width: 50%;
+     margin: 0 auto;
+ }
