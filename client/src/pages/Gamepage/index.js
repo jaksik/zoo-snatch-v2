@@ -3,7 +3,7 @@ import Story from '../../characters.json';
 import API from '../../utils/API';
 
 //Import core game play components
-import Home from '../../Components/Home';
+import Home from '../../components/Home';
 import CharacterSelect from '../../Components/CharacterSelect';
 import Message from '../../Components/Message';
 import Bandersnatch from '../../Components/Bandersnatch';

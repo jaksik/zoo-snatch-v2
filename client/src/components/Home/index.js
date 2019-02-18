@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class CharacterSelect extends Component {
+class Home extends Component {
     constructor(props) {
         super();
         console.log(props.currentUser)
@@ -28,4 +28,4 @@ class CharacterSelect extends Component {
 
 }
 
-export default CharacterSelect;
+export default Home;
