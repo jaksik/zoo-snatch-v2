@@ -4,10 +4,10 @@ import API from '../../utils/API';
 
 //Import core game play components
 import Home from '../../components/Home';
-import CharacterSelect from '../../Components/CharacterSelect';
-import Message from '../../Components/Message';
-import Bandersnatch from '../../Components/Bandersnatch';
-import Canvas from '../../Components/Canvas';
+import CharacterSelect from '../../components/CharacterSelect';
+import Message from '../../components/Message';
+import Bandersnatch from '../../components/Bandersnatch';
+import Canvas from '../../components/Canvas';
 
 
 class Gameplay extends Component {
